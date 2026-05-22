@@ -88,8 +88,20 @@ public class DaylightCombustionModule implements LittleModule {
                 return;
             }
 
-            // Make sure that the entity at hand can burn in the sunlight
-            List<String> entityTypesCanBurnInSunlight = Arrays.asList("SKELETON", "ZOMBIE", "ZOMBIE_VILLAGER", "STRAY", "DROWNED", "PHANTOM");
+            // Make sure that the entity at hand can burn in the sunlight (Expanded for 1.21.11 / Mounts of Mayhem)
+            List<String> entityTypesCanBurnInSunlight = Arrays.asList(
+                    "SKELETON",
+                    "ZOMBIE",
+                    "ZOMBIE_VILLAGER",
+                    "STRAY",
+                    "DROWNED",
+                    "BOGGED",
+                    "PARCHED",
+                    "PHANTOM",
+                    "ZOMBIE_HORSE",
+                    "SKELETON_HORSE",
+                    "ZOMBIE_NAUTILUS"
+            );
             if (!entityTypesCanBurnInSunlight.contains(event.getEntity().getType().toString())) {
                 instance.debugMessage("DaylightCombustion: Mob is not burnable by sunlight, skipping");
                 return;
@@ -99,7 +111,7 @@ public class DaylightCombustionModule implements LittleModule {
                 EntityEquipment equipment = ((LivingEntity) event.getEntity()).getEquipment();
 
                 if (equipment != null && equipment.getHelmet() != null && equipment.getHelmet().getType() != Material.AIR) {
-                    instance.debugMessage("DaylightCombus ion: Mob has a helmet (which prevents them from burning from daylight), skipping");
+                    instance.debugMessage("DaylightCombustion: Mob has a helmet (which prevents them from burning from daylight), skipping");
                     return;
                 }
             }

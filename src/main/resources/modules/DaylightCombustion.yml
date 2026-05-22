@@ -6,7 +6,7 @@ enabled: false
 entities:
   all: true # true = all entities, ignore what's below
   mode: WHITELIST
-  list: [ ZOMBIE, SKELETON, PHANTOM ]
+  list: [ ZOMBIE, SKELETON, PHANTOM, ZOMBIE_VILLAGER, STRAY, DROWNED, BOGGED, PARCHED, ZOMBIE_HORSE, SKELETON_HORSE, ZOMBIE_NAUTILUS ]
 
 # What worlds should be affected?
 worlds:
